@@ -36,10 +36,10 @@
     "@types/react-native": "^0.63.8",
     "@youngjuning/eslint-config-airbnb": "^0.4.0",
     "lint-staged": "^10.2.11",
-    "yorkie": "^2.0.0",
-    "cpy-cli": "^3.1.1",
+    "yorkie": "^2.0.0"
   },
   "dependencies": {
+    "cpy-cli": "^3.1.1"
   },
   "peerDependencies":{
     "react-native-webview": "^11.0.2"
