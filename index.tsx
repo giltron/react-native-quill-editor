@@ -11,7 +11,7 @@ type Props = {
 
 const Quill = (props: Props) => {
   const options = JSON.stringify({
-    placeholder: '请输入...',
+    placeholder: '...',
     modules: {
       toolbar: [[{ header: [1, 2, false] }], ['bold', 'italic', 'underline'], ['image', 'code-block']],
     },
@@ -28,10 +28,11 @@ const Quill = (props: Props) => {
     }
   }
 
+  let webviewSource = Platform.OS === 'ios' ? {html: require('./assets/quill')() } : { uri: 'file:///android_asset/quill.html'}
   return (
     <WebView
       onMessage={onMessage}
-      source={Platform.OS === 'ios' ? require('./assets/quill.html') : { uri: 'file:///android_asset/quill.html' }}
+      source={webviewSource}
       javaScriptEnabled
       injectedJavaScriptBeforeContentLoaded={injectedJavaScriptBeforeContentLoaded}
       injectedJavaScript={injectedJavaScript}
